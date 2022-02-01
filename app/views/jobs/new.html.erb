@@ -1,0 +1,51 @@
+<h1>Create new job</h1>
+<% if @job.errors.any?%>
+<% @job.errors.full_messages.each do |error_message| %>
+  <%= error_message if @job.errors.full_messages.first == error_message %> <br/>
+<% end %>
+<% end %>
+
+
+<%= form_for @job do |f|%>
+  <%= f.label :title%><br>
+  <%= f.text_field :title%><br/>
+  <%= f.label :salary_per_hour%><br>
+  <%= f.text_field :salary_per_hour%><br/>
+
+  <%= f.label :languages%><br/>
+  <%= f.check_box :languages, {:multiple => true}, "English", nil%> <span>English</span>
+  <%= f.check_box :languages, {:multiple => true}, "German", nil%> <span>German</span>
+  <%= f.check_box :languages, {:multiple => true}, "French", nil%> <span>French</span>
+  <%= f.check_box :languages, {:multiple => true}, "Latin", nil%> <span>Latin</span>
+  <%= f.check_box :languages, {:multiple => true}, "Italian", nil%> <span>Italian</span>
+  <%= f.check_box :languages, {:multiple => true}, "Other", nil%> <span>Other</span>
+
+  <br/>
+
+  <%= f.label :shift_dates%><br/>
+  <%= f.radio_button :shift_dates, 1, :checked => true %> 
+  <%= label :shift_dates, '1 day per week' %>
+
+  <%= f.radio_button :shift_dates, 2 %> 
+  <%= label :shift_dates, '2 days per week' %>
+
+  <%= f.radio_button :shift_dates, 3 %> 
+  <%= label :shift_dates, '3 days per week' %>
+
+  <%= f.radio_button :shift_dates, 4 %> 
+  <%= label :shift_dates, '4 days per week' %>
+
+  <%= f.radio_button :shift_dates, 5 %> 
+  <%= label :shift_dates, '5 days per week' %>
+
+  <%= f.radio_button :shift_dates, 6 %> 
+  <%= label :shift_dates, '6 days per week' %>
+
+  <%= f.radio_button :shift_dates, 7 %> 
+  <%= label :shift_dates, '7 days per week' %>
+  
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
+  <br/><br/>
+  <%= f.submit %>
+<%end%>

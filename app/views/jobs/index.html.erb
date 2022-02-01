@@ -1,0 +1,17 @@
+<h1>Jobs</h1>
+<%if  @jobs.nil? %>
+
+<h2>Jobs created by you.</h2>
+
+<table>
+  <% @jobs.each do |job| %>
+    <tr> <td><%= job.title%> 
+    <td><%= link_to 'Show Job Details' ,job_path(job) %> 
+    </tr>
+  <% end %>
+</table>
+<%else%>
+    <p1> You have not created any job yet. </p>
+<% end %>
+<br/><br/>
+<%= button_to "Create New Job", '/jobs/new', method: :get%>
