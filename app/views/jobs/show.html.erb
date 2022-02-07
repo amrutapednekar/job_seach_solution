@@ -1,21 +1,23 @@
 <h1>Job Profile</h1>
 
 <div>
-    <h1>Title</h1>
-    <h1><%= @job.title %></h1>
+    <h3>Title</h3>
+    <span><%= @job.title %><span/>
 </div>
 
 <div>
-    <h1>salary per hour</h1>
-    <h1><%= @job.salary_per_hour %></h1>
+    <h3>salary per hour</h3>
+    <span><%= @job.salary_per_hour %><span/>
 </div>
 
 <div>
-    <h1>Languages</h1>
-    <h1><%= @job.languages %></h1>
+    <h3>Languages</h3>
+    <span><%= @job.languages %><span/>
 </div>
 
 <div>
-    <h1>Shift days per week</h1>
-    <h1><%= @job.shift_dates %></h1>
+    <h3>Shift days per week</h3>
+    <span><%= @job.shift_dates %><span/>
 </div>
+
+<%= button_to "Show All Jobs", '/jobs', method: :get%>

@@ -1,15 +1,23 @@
 <h1>Jobs</h1>
 <%unless  @jobs.nil? %>
   <table>
+  <th>Title</th>
+  <th>Salary(per hour)</th>
+  <th>Shifts</th>
+  <th>Languages</th>
+  <th>Job Details</th>
+  <th>Status</th>
     <% @jobs.each do |job| %>
       <tr> 
       <td><%= job.title%> </td>
-      <td><%= link_to 'Show Job Details' ,job_path(job) %> </td>
+      <td><%= job.salary_per_hour%> </td>
+      <td><%= job.shift_dates%> </td>
+      <td><%= job.languages%> </td>
+      <td><%= link_to 'Show' ,job_path(job) %> </td>
       <td>
-      <% %>
-        <%if  !is_job_owner?(job.user_id) && !is_already_applied(job.user_id)%>
+        <%if  !is_job_owner?(job.user_id) && !is_already_applied?(job.id)%>
            <%= link_to "Apply", apply_job_path(:id => job.id), method: :post %>
-        <%elsif  !is_job_owner?(job.user_id) && is_already_applied(job.user_id)%>
+        <%elsif  !is_job_owner?(job.user_id) && is_already_applied?(job.id)%>
            <span>Applied</span>
         <%else%>
            <span>Owner can not apply</span>

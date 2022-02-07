@@ -4,6 +4,9 @@
 
     <%= button_to "Show Jobs", '/jobs', method: :get%>
 <% else %>
+    <span>If you have an account <span/>
     <%= button_to "Login", '/login', method: :get%>
+    <br/>
+    <span>else  <span/>
     <%= button_to "Sign Up", '/users/new', method: :get%>
 <%end%>
