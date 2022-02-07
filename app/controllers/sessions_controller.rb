@@ -4,6 +4,10 @@ class SessionsController < ApplicationController
   def new
   end
 
+  # Creates a new user - Signup
+  # If usewr created, redirects to wecome pahe.
+  # If uswer is not created, redirects again to login page. 
+  # Displays errors in creating user 
   def create
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
@@ -15,14 +19,18 @@ class SessionsController < ApplicationController
 
   end
 
+  # Login page
   def login
   end
  
+  # Logouts current user
+  # Redirects to welcome page
   def logout
     session[:user_id] = nil 
     redirect_to '/welcome'
   end
 
+  # Displays welcome page
   def welcome
   end
 
