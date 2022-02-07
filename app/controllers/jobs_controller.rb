@@ -3,7 +3,7 @@ class JobsController < ApplicationController
 
   def index
     @user = current_user
-    @jobs = @user.jobs 
+    @jobs = Job.all
   end
 
   def new
@@ -13,9 +13,7 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
-    p job_params
     if @job.save
-      p  @job
       redirect_to job_path(@job)
     else
       render :new
@@ -32,6 +30,7 @@ class JobsController < ApplicationController
 
     redirect_to jobs_path
   end
+
 
   private 
   def job_params

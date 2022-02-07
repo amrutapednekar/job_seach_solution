@@ -16,4 +16,12 @@ class UsersController < ApplicationController
 
   end
 
+  
+  def apply_job()
+    applied_job = UserAppliedJob.new(:user_id => current_user.id, :job_id => params[:id],:status => true)
+      if applied_job.save
+      redirect_to '/jobs'
+    end
+  end
+
 end

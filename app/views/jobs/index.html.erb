@@ -1,17 +1,27 @@
 <h1>Jobs</h1>
-<%if  @jobs.nil? %>
-
-<h2>Jobs created by you.</h2>
-
-<table>
-  <% @jobs.each do |job| %>
-    <tr> <td><%= job.title%> 
-    <td><%= link_to 'Show Job Details' ,job_path(job) %> 
-    </tr>
-  <% end %>
-</table>
+<%unless  @jobs.nil? %>
+  <table>
+    <% @jobs.each do |job| %>
+      <tr> 
+      <td><%= job.title%> </td>
+      <td><%= link_to 'Show Job Details' ,job_path(job) %> </td>
+      <td>
+      <% %>
+        <%if  !is_job_owner?(job.user_id) && !is_already_applied(job.user_id)%>
+           <%= link_to "Apply", apply_job_path(:id => job.id), method: :post %>
+        <%elsif  !is_job_owner?(job.user_id) && is_already_applied(job.user_id)%>
+           <span>Applied</span>
+        <%else%>
+           <span>Owner can not apply</span>
+        <%end%>
+      </td>
+      </tr>
+    <% end %>
+    </td>
+  </table>
 <%else%>
-    <p1> You have not created any job yet. </p>
+    <p1> No job present.  Do you want to creat a job ? </p>
 <% end %>
+
 <br/><br/>
 <%= button_to "Create New Job", '/jobs/new', method: :get%>

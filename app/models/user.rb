@@ -4,5 +4,7 @@ class User < ApplicationRecord
     validates :password_digest, presence: true 
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
     validates_uniqueness_of :email
-    has_many :jobs
+    has_many :jobs, dependent: :destroy
+    has_many :user_applied_jobs
+
 end

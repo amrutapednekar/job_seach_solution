@@ -12,5 +12,8 @@
 
   <body>
     <%= yield %>
+    <%if current_user%>
+       <%= button_to "Logout", '/logout', method: :get%>
+    <%end%>   
   </body>
 </html>
