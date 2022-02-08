@@ -2,9 +2,9 @@
 
 one:
   id: 1 
-  email: MyString
+  email: user1@gmail.com
   password_digest: MyString
 
 two:
-  email: MyString
+  email: user2@gmail.com
   password_digest: MyString
