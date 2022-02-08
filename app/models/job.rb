@@ -3,6 +3,7 @@ class Job < ApplicationRecord
     validates :title, presence: true
     validates :languages, presence: true
     before_validation :clean_empty_array_languages
+    has_many :user_applied_jobs
 
     private
 
@@ -10,5 +11,12 @@ class Job < ApplicationRecord
       self.languages = languages.presence
     end
 
-    
+    def self.search(search)
+      if search
+        where("title like ?", "%#{search}%")
+      else
+        all
+      end
+    end
+
 end

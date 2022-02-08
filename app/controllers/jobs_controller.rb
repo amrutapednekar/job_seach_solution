@@ -2,9 +2,10 @@ class JobsController < ApplicationController
   before_action :authorized
  
   # If user is loggeg in , finds all jobs
+  # If user enters search , it searches job whose titke like search query
   def index
     @user = current_user
-    @jobs = Job.all
+    @jobs = Job.search(params[:search])
   end
 
   # If user is loggeg in ,renders a form to create new job 
