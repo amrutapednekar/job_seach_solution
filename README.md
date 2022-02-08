@@ -14,10 +14,10 @@ The setups steps expect following tools installed on the system.
 
 ##### 1. Check out the repository
 
+- Create forlder job_seach_solution
 ```
-git clone git@github.com:organization/project-name.git
-https://github.com/amrutapednekar/job_seach_solution.git
 cd job_seach_solution
+git clone https://github.com/amrutapednekar/job_seach_solution.git
 gem install bcrypt
 bundle install
 ```
