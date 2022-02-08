@@ -22,6 +22,8 @@
   {  
   border-spacing: 0; 
   border-collapse: collapse; 
+  margin-left: auto;
+  margin-right: auto;
 } 
 
 td  
@@ -50,18 +52,24 @@ body
     font:  "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif; 
     color: #000000;     
     background-color: #c9eeed;
+    text-align: center;
+      max-width: 100%;
+      margin: auto;
+      padding: 15%;
+  
 } 
 .input[type=button], input[type=submit], input[type=reset] {
     background-color: #4cafad;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 10px;
   }
 
 #wrapper 

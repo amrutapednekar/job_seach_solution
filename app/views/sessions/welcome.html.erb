@@ -2,9 +2,9 @@
 <span>By Amruta Pednekar</span>
 <br/><br/>
 <% if logged_in? %>
-    <h1>You are Logged In, <%= current_user.email %></h1>
+    <h2>You are Logged In, <%= current_user.email %></h2>
 
-    <%= button_to "Show Jobs", '/jobs', method: :get%>
+    <%= button_to "Do you want to create OR apply for a job ?", '/jobs', method: :get%>
 <% else %>
     <span>If you have an account <span/>
     <%= button_to "Login", '/login', method: :get%>

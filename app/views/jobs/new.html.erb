@@ -6,22 +6,22 @@
 <% end %>
 
 <%= form_for @job do |f|%>
-  <%= f.label :title%><br>
-  <%= f.text_field :title%><br/>
-  <%= f.label :salary_per_hour%><br>
-  <%= f.text_field :salary_per_hour%><br/>
+  <%= f.label :title%>:
+  <%= f.text_field :title%><br/><br/>
+  <%= f.label :salary_per_hour%>:
+  <%= f.text_field :salary_per_hour%><br/><br/>
 
-  <%= f.label :languages%><br/>
-  <%= f.check_box :languages, {:multiple => true}, "English", nil%> <span>English</span>
-  <%= f.check_box :languages, {:multiple => true}, "German", nil%> <span>German</span>
-  <%= f.check_box :languages, {:multiple => true}, "French", nil%> <span>French</span>
-  <%= f.check_box :languages, {:multiple => true}, "Latin", nil%> <span>Latin</span>
-  <%= f.check_box :languages, {:multiple => true}, "Italian", nil%> <span>Italian</span>
-  <%= f.check_box :languages, {:multiple => true}, "Other", nil%> <span>Other</span>
+  <%= f.label :languages%>:
+  <%= f.check_box :languages, {:multiple => true}, "english", nil%> <span>English</span>
+  <%= f.check_box :languages, {:multiple => true}, "german", nil%> <span>German</span>
+  <%= f.check_box :languages, {:multiple => true}, "french", nil%> <span>French</span>
+  <%= f.check_box :languages, {:multiple => true}, "latin", nil%> <span>Latin</span>
+  <%= f.check_box :languages, {:multiple => true}, "italian", nil%> <span>Italian</span>
+  <%= f.check_box :languages, {:multiple => true}, "other", nil%> <span>Other</span>
 
-  <br/>
+  <br/><br/>
 
-  <%= f.label :shift_dates%><br/>
+  <%= f.label :shift_dates%>:
   <%= f.radio_button :shift_dates, 1, :checked => true %> 
   <%= label :shift_dates, '1 day per week' %>
 

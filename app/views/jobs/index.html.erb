@@ -5,7 +5,6 @@
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
-
 <%unless  @jobs.nil? %>
   <table>
   <th>Title</th>
@@ -19,7 +18,7 @@
       <td><%= job.title%> </td>
       <td><%= job.salary_per_hour%> </td>
       <td><%= job.shift_dates%> </td>
-      <td><%= job.languages%> </td>
+      <td><%= languages_array_to_string(job.languages)%> </td>
       <td><%= link_to 'Show' ,job_path(job) %> </td>
       <td>
         <%if  !is_job_owner?(job.user_id) && !is_already_applied?(job.id)%>

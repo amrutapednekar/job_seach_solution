@@ -16,4 +16,8 @@ module JobsHelper
         end
     end
 
+    def languages_array_to_string(languages_array)
+        languages_array.map(&:inspect).join(', ')
+    end
+
 end
