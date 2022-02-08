@@ -5,7 +5,7 @@
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
-<%unless  @jobs.nil? %>
+<%unless  @jobs.blank? %>
   <table>
   <th>Title</th>
   <th>Salary(per hour)</th>

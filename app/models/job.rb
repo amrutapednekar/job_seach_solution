@@ -17,10 +17,9 @@ class Job < ApplicationRecord
     def self.search(search)
       if search
         search_array = "#{search}".split(',')
-        where("title like ?", "%#{search}%").or(where("languages @> ARRAY[?]::varchar[]", search_array))
+        where("lower(title) like ?", "%#{search.downcase}%").or(where("languages @> ARRAY[?]::varchar[]", search_array))
       else
         all
       end
     end
-
 end
