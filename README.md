@@ -1,24 +1,60 @@
-# README
+# README 
 
-This README would normally document whatever steps are necessary to get the
+This README is a  document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+##### Prerequisites
 
-* Ruby version
+The setups steps expect following tools installed on the system.
 
-* System dependencies
+- Github
+- Ruby [ruby 2.7.2p137]
+- Rails [6.1.3.1]
+- PostgreSQL14 - To launch it run pgAdmin
 
-* Configuration
+##### 1. Check out the repository
 
-* Database creation
+```
+git clone git@github.com:organization/project-name.git
+https://github.com/amrutapednekar/job_seach_solution.git
+cd job_seach_solution
+gem install bcrypt
+bundle install
+```
 
-* Database initialization
+##### 2. Create database.yml file
 
-* How to run the test suite
+Copy the sample database.yml file and edit the database configuration as required.
 
-* Services (job queues, cache servers, search engines, etc.)
+ File location : config/database.yml.sample config/database.yml
 
-* Deployment instructions
 
-* ...
+##### 3. Create and setup the database
+
+Run the following commands to create and setup the database.
+
+```ruby
+bundle exec rake db:create
+bundle exec rake db:setup
+bundle exec rake db:migrate
+bundle exec rake db:seed
+```
+
+##### 4. Start the Rails server
+
+You can start the rails server using the command given below.
+
+```ruby
+rails s
+```
+
+And now you can visit the site with the URL http://localhost:3000
+
+##### 4. Login 
+
+You can login with already created users.
+ Email address : user1@gmail.com
+ password : user1
+
+ Email address : user1@gmail.com
+ password : user1
